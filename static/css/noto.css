@@ -75,9 +75,8 @@
     url(../fonts/otf/NotoSansKR-Black-Hestia.otf) format('opentype');
 }
 
-.noto {
-    font-family: 'Source Code Pro', 'Noto Sans Korean', sans-serif;
-}
 :lang(ko) {
     font-family: 'Source Code Pro', 'Noto Sans Korean', monospace;
+    word-break: keep-all;
+    word-wrap: break-word;
 }
