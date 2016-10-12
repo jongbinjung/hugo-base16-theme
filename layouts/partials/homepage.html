@@ -3,7 +3,7 @@
 
   {{ partial "hero.html" . }}
 
-  <h1 class="headline">Recent Posts</h1>
+  <h1 class="headline" lang="ko">최근글</h1>
 
   <div class="article-list">
     {{ range first 3 (where .Data.Pages "Section" "post") }}
@@ -13,7 +13,7 @@
 
 {{ with .Site.Taxonomies.categories }}
 
-  <h1 class="headline">Categories</h1>
+  <h1 class="headline" lang="ko">분류</h1>
 
   <section class="categories">
     {{ range $name, $value := . }}
@@ -28,7 +28,7 @@
 
 {{ with .Site.Taxonomies.tags }}
 
-  <h1 class="headline">Tags</h1>
+  <h1 class="headline" lang="ko">태그</h1>
 
   <section class="tags">
     {{ range $name, $value := . }}
