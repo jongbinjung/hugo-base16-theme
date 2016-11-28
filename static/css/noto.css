@@ -80,3 +80,8 @@
     word-break: keep-all;
     word-wrap: break-word;
 }
+
+figcaption p {
+  color: #AAA;
+  font-size: small;
+}
