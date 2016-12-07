@@ -6,9 +6,12 @@
   <h1 class="headline" lang="ko">최근글</h1>
 
   <div class="article-list">
-    {{ range first 3 (where .Data.Pages "Section" "post") }}
+    {{ range (.Paginate (where .Data.Pages "Section" "post")).Pages }}
       {{ partial "article-list-item.html" . }}
     {{ end }}
+		<div class="center">
+			{{ template "_internal/pagination.html" . }}
+		</div>
   </div>
 
 {{ with .Site.Taxonomies.categories }}

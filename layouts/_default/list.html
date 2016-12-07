@@ -1,8 +1,11 @@
 {{ partial "header.html" . }}
 <main role="main" class="article-list">
   <h1 class="list-title">{{ .Title }}</h1>
-  {{ range .Data.Pages }}
+  {{ range .Paginator.Pages }}
     {{ partial "article-list-item.html" . }}
   {{ end }}
+	<div class="center">
+		{{ template "_internal/pagination.html" . }}
+	</div>
 </main>
 {{ partial "footer.html" . }}
