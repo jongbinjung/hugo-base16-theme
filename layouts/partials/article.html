@@ -1,5 +1,6 @@
 {{ $baseurl := .Site.BaseURL }}{{ $dateMissing := eq .Date.Year 1}}
 <article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <h1 class="headline" itemprop="headline">{{ .Title }}</h1>
   <div class="meta">
 {{ if eq $dateMissing false }}
     <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></span>
@@ -7,22 +8,23 @@
 {{ with .Params.categories }}
     <span class="val">
 {{ range . }}
-        <a href="{{ $baseurl }}categories/{{ . | urlize }}"
-          >{{ . }}</a>{{ end }}</span><span class="key">에 기고</span>
+      <a href="{{ $baseurl }}categories/{{ . | urlize }}"
+        >{{ . }}</a>{{ end }}</span><span class="key">에 기고</span>
 {{ end }}
+    </span>
+  </div>
+  <section class="body" itemprop="articleBody">
+{{ .Content }}
+    <div class="meta-foot">
 {{ with .Params.tags }}
-    <br>
-    <span class="key">태그:</span>
-    <span class="val">
+      <br>
+      <span class="key">태그:</span>
+      <span class="val">
 {{ range . }}
         <a href="{{ $baseurl }}tags/{{ . | urlize }}">{{ . }}</a>
 {{ end }}
-    </span>
 {{ end }}
-  </div>
-  <h1 class="headline" itemprop="headline">{{ .Title }}</h1>
-  <section class="body" itemprop="articleBody">
-    {{ .Content }}
+    </div>
   </section>
 {{ partial "disqus.html" . }}
 </article>

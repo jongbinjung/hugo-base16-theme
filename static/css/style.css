@@ -286,6 +286,7 @@ footer a {
 article.single .meta {
   font-size: 0.9em;
   text-align: right;
+  padding-bottom: 0.5em;
 }
 
 article.single .meta .key {
@@ -302,6 +303,12 @@ article.single .meta .val, article.single .meta .val a {
     padding-right: 2rem;
   }
 }
+
+article.single .meta-foot {
+  font-size: small;
+  text-align: left;
+}
+
 
 article.single h1.headline {
   margin-top: 0;
