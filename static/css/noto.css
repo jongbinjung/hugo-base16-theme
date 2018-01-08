@@ -77,8 +77,8 @@
 
 :lang(ko) {
     font-family: 'Source Code Pro', 'Noto Sans Korean', monospace;
-    word-break: keep-all;
-    word-wrap: break-word;
+    /*word-break: keep-all;*/
+    /*word-wrap: break-word;*/
 }
 
 figcaption p {

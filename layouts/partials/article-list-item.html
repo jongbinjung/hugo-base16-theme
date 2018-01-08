@@ -9,6 +9,11 @@
 {{ end }}
   </div>
   <section class="summary">
-    {{ .Summary }} {{ if .Truncated }} <a href="{{ .RelPermalink }}">더보기...</a>{{ end }}
+    {{ .Description | default .Summary }}
+    {{ if .Truncated }}
+    <p>
+      <a href="{{ .RelPermalink }}">더보기...</a>
+    </p>
+    {{ end }}
   </section>
 </article>
