@@ -336,6 +336,10 @@ article.single section.body a { color: var(--base0f); }
 
 /* Article Elements */
 
+article.single * {
+  max-width: 100%;
+}
+
 article.single pre {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -351,7 +355,7 @@ article.single p code {
   color: var(--base07);
 }
 
-article.single figure {
+article.single figure, article.single div.highlight {
   box-sizing: border-box;
   max-width: 52rem;
   width: 52rem;
@@ -363,7 +367,7 @@ article.single figure {
 }
 
 @media (--breakpoint-md) {
-  article.single figure {
+  article.single figure, article.single div.highlight {
     width: 100%;
     margin-left: 0;
     margin-right: 0;

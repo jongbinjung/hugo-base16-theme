@@ -1,15 +1,16 @@
-{{ $baseurl := .Site.BaseURL }}{{ $dateMissing := eq .Date.Year 1}}
+{{ $page := .Page }}
 <article class="single" itemscope itemtype="http://schema.org/BlogPosting">
   <h1 class="headline" itemprop="headline">{{ .Title }}</h1>
   <div class="meta">
-{{ if eq $dateMissing false }}
+<<<<<<< HEAD
+{{ if not .Page.Date.IsZero }}
     <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></span>
 {{ end }}
 {{ with .Params.categories }}
     <span class="val">
 {{ range . }}
-      <a href="{{ $baseurl }}categories/{{ . | urlize }}"
-        >{{ . }}</a>{{ end }}</span><span class="key">에 기고</span>
+      <a href="{{ . | printf "categories/%s" | relURL }}">{{ . }}</a>
+      <span class="key">에 기고</span>
 {{ end }}
     </span>
   </div>
@@ -21,7 +22,7 @@
       <span class="key">태그:</span>
       <span class="val">
 {{ range . }}
-        <a href="{{ $baseurl }}tags/{{ . | urlize }}">{{ . }}</a>
+        <a href="{{ . | printf "tags/%s" | relURL }}">{{ . }}</a>
 {{ end }}
 {{ end }}
     </div>

@@ -1,9 +1,8 @@
-{{ $dateMissing := eq .Date.Year 1}}
 <article class="list-item" itemscope itemtype="http://schema.org/Blog">
   <h2 class="headline" itemprop="headline">{{ if .Draft }}(draft) {{ end }}<a
       href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
   <div class="meta">
-{{ if eq $dateMissing false }}
+{{ if not .Date.IsZero }}
     <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></span>
     <span class="key">작성</span>
 {{ end }}
