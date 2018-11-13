@@ -2,7 +2,6 @@
 <article class="single" itemscope itemtype="http://schema.org/BlogPosting">
   <h1 class="headline" itemprop="headline">{{ .Title }}</h1>
   <div class="meta">
-<<<<<<< HEAD
 {{ if not .Page.Date.IsZero }}
     <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></span>
 {{ end }}
@@ -13,6 +12,7 @@
       <span class="key">에 기고</span>
 {{ end }}
     </span>
+{{ end }}
   </div>
   <section class="body" itemprop="articleBody">
 {{ .Content }}
@@ -29,3 +29,4 @@
   </section>
 {{ partial "disqus.html" . }}
 </article>
+
