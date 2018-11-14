@@ -2,9 +2,17 @@
   <h2 class="headline" itemprop="headline">{{ if .Draft }}(draft) {{ end }}<a
       href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
   <div class="meta">
+{{ with .Params.categories }}
+    <span class="val">
+{{ range . }}
+      <a href="{{ . | printf "categories/%s" | relURL }}">{{ . }}</a>
+{{ end }}
+    </span>
+{{ end }}
+    <!-- <span class="key">작성</span> -->
 {{ if not .Date.IsZero }}
-    <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></span>
-    <span class="key">작성</span>
+    <span class="val">(<time itemprop="datePublished"
+        datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>)</span>
 {{ end }}
   </div>
   <section class="summary">
